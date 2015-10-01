@@ -2,14 +2,14 @@
 
 namespace App\Models;
 
-use Eloquent;
+use Moloquent;
 
 /**
  * Task Moddel
  *
  * @author Hafiz Waheeduddin
  */
-class Task extends Eloquent
+class Task extends Moloquent
 {
     protected $fillable = ['title', 'description'];
 

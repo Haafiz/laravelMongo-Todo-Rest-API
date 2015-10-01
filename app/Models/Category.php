@@ -1,14 +1,14 @@
 <?php
 namespace App\Models;
 
-use Eloquent;
+use Moloquent;
 
 /**
  * Task Moddel
  *
  * @author Hafiz Waheeduddin
  */
-class Category extends Eloquent
+class Category extends Moloquent
 {
     public function tasks()
     {
