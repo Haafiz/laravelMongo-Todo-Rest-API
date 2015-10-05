@@ -61,7 +61,7 @@ class CategoryController extends Controller
      */
     public function show($id)
     {
-        //
+        return $this->model->find($id);
     }
 
     /**
@@ -96,6 +96,11 @@ class CategoryController extends Controller
     public function destroy($id)
     {
         //
+    }
+    
+    public function listTasks($categoryId) {
+        $category = $this->model->find($categoryId);
+        return $category->tasks;
     }
 
 }

@@ -16,4 +16,5 @@ Route::get('/', function () {
 });
 
 Route::resource('task', 'TaskController');
+Route::get('category/{category_Id}/tasks', 'CategoryController@listtasks');
 Route::resource('category', 'CategoryController');
