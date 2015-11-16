@@ -12,6 +12,6 @@ class Category extends Moloquent
 {
     public function tasks()
     {
-        return $this->embedsMany('App\Models\Task');
+        return $this->hasMany('App\Models\Task');
     }
 }

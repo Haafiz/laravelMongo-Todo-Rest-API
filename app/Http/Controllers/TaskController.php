@@ -114,7 +114,7 @@ class TaskController extends Controller
         $deleted = $this->task->destroy($id);
         
         if($deleted){
-            return ['message' => 'Deleted Successfully'];
+            return ['deleted' => $id];
         }
     }
 

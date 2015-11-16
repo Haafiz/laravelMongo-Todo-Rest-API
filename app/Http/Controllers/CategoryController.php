@@ -84,7 +84,12 @@ class CategoryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $category = $this->model->find($id);
+        $category->name = Input::get('name');
+        
+        if ($category->save()) {
+            return $category;
+        }
     }
 
     /**
@@ -95,12 +100,10 @@ class CategoryController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $deleted = $this->model->destroy($id);
+        if($deleted) {
+            return ['deleted'=>$id];
+        }
     }
     
-    public function listTasks($categoryId) {
-        $category = $this->model->find($categoryId);
-        return $category->tasks;
-    }
-
 }
