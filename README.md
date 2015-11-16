@@ -2,10 +2,10 @@ This is a sample Todo REST Api in Laravel using MongoDB
 <hr>
 ### Table of Contents
 **[Dependencies](#dependencies)**  
-**[Usage](#usage)**
-**[Configuration](#configuration)**
+**[Usage](#usage)**  
+**[Configuration](#configuration)**  
 **[Setup Detail](#setup-detail)**  
-**[More Usage Detail](#more-usage-detail)**
+**[More Usage Detail](#more-usage-detail)**  
 
 ### Dependencies
 Other than Laravel and MongoDB, there is php mongodb driver that needs to be installed. You can find how to install MongoDB driver tutorials here for Linux:http://haafiz.me/development/installing-mongodb-driver-mongoclient-for-php-on-ubuntu
@@ -24,7 +24,7 @@ And see response in REST Api clients like Postman and understand how different r
 Connection detail can be configure in app/config/database.php in Laravel. If you are using .env file then configure accordingly. Here is connection detail example:
 app/config/database.php
 
-...php
+...php  
 'mongodb' => array(
             'driver' => 'mongodb',
             'host' => env('DB_HOST', 'localhost'),
