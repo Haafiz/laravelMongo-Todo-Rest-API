@@ -24,7 +24,7 @@ And see response in REST Api clients like Postman and understand how different r
 Connection detail can be configure in app/config/database.php in Laravel. If you are using .env file then configure accordingly. Here is connection detail example:
 app/config/database.php
 
-...php  
+```php  
 'mongodb' => array(
             'driver' => 'mongodb',
             'host' => env('DB_HOST', 'localhost'),
@@ -36,7 +36,7 @@ app/config/database.php
                 'db' => 'admin' // sets the authentication database required by mongo 3
             )
         ),
-...
+```
 
 ### Setup Detail
 If you want to know how to setup MongoDB with Laravel step by step, then you can find detail here: http://haafiz.me/development/using-laravel-with-mongodb
