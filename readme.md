@@ -1,27 +1,45 @@
-## Laravel PHP Framework
+This is a sample Todo REST Api in Laravel using MongoDB
+<hr>
+### Table of Contents
+**[Dependencies](#dependencies)**  
+**[Usage](#usage)**
+**[Configuration](#configuration)**
+**[Setup Detail](#setup-detail)**  
+**[More Usage Detail](#more-usage-detail)**
 
-[![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
-[![Total Downloads](https://poser.pugx.org/laravel/framework/d/total.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Stable Version](https://poser.pugx.org/laravel/framework/v/stable.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Unstable Version](https://poser.pugx.org/laravel/framework/v/unstable.svg)](https://packagist.org/packages/laravel/framework)
-[![License](https://poser.pugx.org/laravel/framework/license.svg)](https://packagist.org/packages/laravel/framework)
+### Dependencies
+Other than Laravel and MongoDB, there is php mongodb driver that needs to be installed. You can find how to install MongoDB driver tutorials here for Linux:http://haafiz.me/development/installing-mongodb-driver-mongoclient-for-php-on-ubuntu
+and here for Windows:http://haafiz.me/development/installing-mongodb-driver-mongoclient-for-php-on-windows
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as authentication, routing, sessions, queueing, and caching.
+Other than MongoDB driver, we are using Laravel MongoDB package (aka Moloquent) that package is included in composer so you don't need to install it separately.
 
-Laravel is accessible, yet powerful, providing powerful tools needed for large, robust applications. A superb inversion of control container, expressive migration system, and tightly integrated unit testing support give you the tools you need to build any application with which you are tasked.
+### Usage
+This sample REST Api for todo app. is intended to provide a basic setup of Laravel 5 with MongoDB so it can be used as starting point to understand and setup MongoDB usage with Laravel.
+And make several similar Models. Right now it has two models only but Category and Task with hasMany relation. You can go to Category Model and try different relations as told here:
+https://github.com/jenssegers/laravel-mongodb#relations
 
-## Official Documentation
+And see response in REST Api clients like Postman and understand how different relations work. This will help beginners to understand how different relations are managed in different structures in MongoDB.
 
-Documentation for the framework can be found on the [Laravel website](http://laravel.com/docs).
+### Configurations
+Connection detail can be configure in app/config/database.php in Laravel. If you are using .env file then configure accordingly. Here is connection detail example:
+app/config/database.php
 
-## Contributing
+...php
+'mongodb' => array(
+            'driver' => 'mongodb',
+            'host' => env('DB_HOST', 'localhost'),
+            'port' => env('DB_PORT', 27017),
+            'database' => env('DB_DATABASE', 'l5'),
+            'username' => env('DB_USERNAME', 'l5'),
+            'password' => env('DB_PASSWORD', '123456'),
+            'options' => array(
+                'db' => 'admin' // sets the authentication database required by mongo 3
+            )
+        ),
+...
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](http://laravel.com/docs/contributions).
+### Setup Detail
+If you want to know how to setup MongoDB with Laravel step by step, then you can find detail here: http://haafiz.me/development/using-laravel-with-mongodb
 
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
-
-### License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
+### More Usage Detail
+This App. use Moloquent package of Laravel actually named as Laravel MongoDB. So I would recommend checking detail of that package: https://github.com/jenssegers/laravel-mongodb
